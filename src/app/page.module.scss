@@ -97,7 +97,6 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: flex-end;
-      width: 900px;
       @media screen and (max-width: 400px){
         width: 280px;
         justify-content: center;
@@ -105,11 +104,19 @@
 
       .card{
         margin: 5px;
+        width: 600px;
         @media screen and (max-width: 400px){
           width: 280px;
         }
 
+        .mock{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
         .car{
+          width: 100%;
+          max-width: 440px;
           @media screen and (max-width: 400px){
             width: 280px;
             height: 180px;

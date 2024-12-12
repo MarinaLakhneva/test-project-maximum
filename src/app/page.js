@@ -96,7 +96,9 @@ export default function Home() {
                         ) : (
                         data.map((car, index) => (
                         <div className={styles.card} key={index}>
-                            <Image className={styles.car} src={Car} alt="car"/>
+                            <div  className={styles.mock}>
+                                <Image className={styles.car} src={Car} alt="car"/>
+                            </div>
                             <p className={styles.title}>{car.brandName} {car.modelName}</p>
                             <p className={styles.description}>
                                 {car.EngineSize} л. / {car.Power} л. с. / {car.Transmission}
