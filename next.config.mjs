@@ -4,7 +4,11 @@ const nextConfig = {
 		domains: ['photobank.maximum.expert'],
 		unoptimized: true, // Отключаем оптимизацию изображений
 	},
-	output: 'export',
+	sassOptions: {
+		includePaths: ['./src'],
+	},
+	output: 'standalone',
 };
 
 export default nextConfig;
+

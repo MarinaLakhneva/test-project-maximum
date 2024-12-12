@@ -3,12 +3,12 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import {useEffect, useState} from "react";
 import Carousel from "@/app/components/Carousel/carousel";
-import Model from "@/app/assets/mock2.png";
-import Warranty from "@/app/assets/warranty.svg";
-import icon1 from "@/app/assets/specifications/icon1.png";
-import icon2 from "@/app/assets/specifications/icon2.png";
-import icon3 from "@/app/assets/specifications/icon3.png";
-import Advertisemet from "@/app/assets/advertisemet.png";
+import Model from "../../../public/assets/mock2.png";
+import Warranty from "../../../public/assets/warranty.svg";
+import icon1 from "../../../public/assets/specifications/icon1.png";
+import icon2 from "../../../public/assets/specifications/icon2.png";
+import icon3 from "../../../public/assets/specifications/icon3.png";
+import Advertisemet from "../../../public/assets/advertisemet.png";
 
 function formatPrice(price) {
     return price.toLocaleString('ru-RU', { minimumFractionDigits: 0, maximumFractionDigits: 0 });

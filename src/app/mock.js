@@ -1,4 +1,4 @@
-import Car from "@/app/assets/mock1.png";
+import Car from "../../public/assets/mock1.png";
 
 export const cars = [
     {

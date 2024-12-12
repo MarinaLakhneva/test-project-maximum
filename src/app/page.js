@@ -3,7 +3,7 @@ import styles from "./page.module.scss";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
-import Car from "@/app/assets/mock1.png";
+import Car from "../../public/assets/mock1.png";
 import {engines, brands, complectations} from "./mock"
 import {GetData} from "@/app/request";
 

@@ -5,26 +5,26 @@ import localFont from "next/font/local";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {useEffect} from "react";
-import Logo from "@/app/assets/logo.svg";
+import Logo from "../../public/assets/logo.svg";
 import {GetData} from "@/app/request";
 
 const tacticSansReg = localFont({
-  src: "assets/fonts/TacticSansReg.woff",
+  src: "../../public/fonts/TacticSansReg.woff",
   variable: "--font-tactic-sans-reg",
 });
 
 const tacticSansMed = localFont({
-    src: "assets/fonts/TacticSansMed.woff",
+    src: "../../public/fonts/TacticSansMed.woff",
     variable: "--font-tactic-sans-med",
 });
 
 const tacticSansBold = localFont({
-    src: "assets/fonts/TacticSansBold.woff",
+    src: "../../public/fonts/TacticSansBold.woff",
     variable: "--font-tactic-sans-bold",
 });
 
 const tacticSansBlack = localFont({
-    src: "assets/fonts/TacticSansBlack.woff",
+    src: "../../public/fonts/TacticSansBlack.woff",
     variable: "--font-tactic-sans-black",
 });
 
