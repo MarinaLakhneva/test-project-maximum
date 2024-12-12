@@ -1,4 +1,4 @@
-import Car from "../../public/assets/mock1.png";
+import Car from "../../public/assets/mock.png";
 
 export const cars = [
     {

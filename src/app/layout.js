@@ -1,12 +1,6 @@
-"use client";
+import Header from "../app/components/Header/header";
 import "./Normalize.scss";
-import styles from "./layout.module.scss";
 import localFont from "next/font/local";
-import Image from "next/image";
-import {useRouter} from "next/navigation";
-import {useEffect} from "react";
-import Logo from "../../public/assets/logo.svg";
-import {GetData} from "@/app/request";
 
 const tacticSansReg = localFont({
   src: "../../public/fonts/TacticSansReg.woff",
@@ -28,22 +22,7 @@ const tacticSansBlack = localFont({
     variable: "--font-tactic-sans-black",
 });
 
-const byDefault = "Chery";
-export default function RootLayout({ children }) {
-    const router = useRouter();
-
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const result = await GetData(byDefault);
-                sessionStorage.setItem('byDefault', JSON.stringify(result));
-            } catch (error) {
-                console.error("Error fetching data:", error);
-            }
-        };
-        fetchData();
-    }, []);
-
+export default function RootLayout({children}) {
     return (
         <html lang="en">
         <head>
@@ -51,11 +30,7 @@ export default function RootLayout({ children }) {
             <title>Максимум</title>
         </head>
         <body className={`${tacticSansReg.variable} ${tacticSansBlack.variable} ${tacticSansMed.variable} ${tacticSansBold.variable}`}>
-            <header className={styles.header}>
-                  <Image className={styles.logo} src={Logo} alt="logo" onClick={() => router.push('/')}/>
-                  <hr className={styles.delimiter}/>
-                  <p className={styles.company}>Официальный дилер Максимум </p>
-            </header>
+            <Header/>
             {children}
         </body>
         </html>

@@ -1,28 +1,24 @@
 "use client";
-import styles from "./page.module.scss";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {useEffect, useState} from "react";
-import Car from "../../public/assets/mock1.png";
+import {GetData} from "../app/request";
+import {useModelStore} from "../app/store/store";
 import {engines, brands, complectations} from "./mock"
-import {GetData} from "@/app/request";
+import styles from "./page.module.scss";
+import Car from "../../public/assets/mock.png";
 
 const byDefault = "Chery";
+const initialData = await GetData(byDefault);
+
 export default function Home() {
     const router = useRouter();
     const [brand, setBrand] = useState(byDefault);
     const [engine, setEngine] = useState("");
     const [complectation, setComplectation] = useState("");
-    const [data, setData] = useState([]);
+    const [data, setData] = useState(initialData);
     
     useEffect(() => {
-        if(brand === byDefault){
-            const storedData = sessionStorage.getItem('byDefault');
-            if (storedData) {
-                const parsedData = JSON.parse(storedData);
-                setData(parsedData);
-            }
-        }
         const fetchData = async () => {
             try {
                 const result = await GetData(brand);
@@ -34,11 +30,13 @@ export default function Home() {
         fetchData();
     }, [brand]);
     
+    const setModelData = useModelStore(state => state.setModelData);
     const handleClickAbout = (count) => {
-        sessionStorage.setItem('model', JSON.stringify(data[count]));
+        const modelData = JSON.stringify(data[count]);
+        setModelData(modelData);
         router.push('/about');
     };
-
+    
     const handleClickReset = () => {
         setBrand(byDefault);
         setEngine("");

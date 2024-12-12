@@ -1,8 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
-		domains: ['photobank.maximum.expert'],
-		unoptimized: true, // Отключаем оптимизацию изображений
+		remotePatterns: [
+			{
+				protocol: 'https',
+				hostname: 'photobank.maximum.expert',
+				port: '',
+				pathname: '/**',
+			},
+		],
 	},
 	sassOptions: {
 		includePaths: ['./src'],
@@ -11,4 +17,5 @@ const nextConfig = {
 };
 
 export default nextConfig;
+
 
