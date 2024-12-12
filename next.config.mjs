@@ -10,9 +10,6 @@ const nextConfig = {
 			},
 		],
 	},
-	sassOptions: {
-		includePaths: ['./src'],
-	},
 	output: 'standalone',
 };
 
